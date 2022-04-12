@@ -6,8 +6,14 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      squares: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+      squares: [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     }
+  }
+
+  handleGamePlay = (index) => {
+    const { squares } = this.state
+    squares[index] = "X"
+    this.setState({squares: squares})
   }
 
   render(){
@@ -21,6 +27,7 @@ class App extends Component{
             key={index}
             value={value}
             index={index}
+            handleGamePlay={this.handleGamePlay}
             />
           )
         })}
