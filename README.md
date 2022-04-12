@@ -5,7 +5,10 @@ This game will be for two users, playing on one device, taking turns. You will h
 This project will challenge your knowledge of React but should also be an exercise in creating good user experiences. Your view should be styled to look good as well as function flawlessly.
 
 ### User Stories:
-- As a user, I should start off seeing a 3x3 grid on the main page.
+- As a user, I should start off seeing a 3x3 grid on the main page.(done)
+    - Map array to square component so that one square appears per index
+    - Set square div className equal to gameboard
+    - Adjust gameboard css so that the squares wrap into a 3x3 grid
 - As a user, I should be able to click on a square to mark it.
 - As a user, my partner should be able to click on a square after me and see their mark.
 - As a user, I shouldn't be able to click on a square that has already been selected.
