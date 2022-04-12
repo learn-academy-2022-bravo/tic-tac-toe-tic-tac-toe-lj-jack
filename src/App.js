@@ -6,14 +6,17 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      squares: [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+      squares: [" ", " ", " ", " ", " ", " ", " ", " ", " "],
+      currentPlayer: "X"
     }
   }
 
-  handleGamePlay = (index) => {
-    const { squares } = this.state
-    squares[index] = "X"
-    this.setState({squares: squares})
+  handleGamePlay = (currentClick) => {
+    const { squares, currentPlayer } = this.state
+    if(squares[currentClick] === " ") {
+      squares[currentClick] = currentPlayer
+      this.setState({squares: squares, currentPlayer: currentPlayer === "X" ? "O" : "X"})
+    }
   }
 
   render(){
