@@ -11,6 +11,8 @@
   flex-wrap: wrap;
   width: 320px;
   margin: 0 auto;
+  text-align: center;
+  justify-content: center;
 }
 
 h1{
@@ -18,5 +20,9 @@ h1{
 }
 
 h3{
+  text-align: center;
+}
+
+.button{
   text-align: center;
 }

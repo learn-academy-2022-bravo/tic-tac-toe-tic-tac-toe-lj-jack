@@ -44,11 +44,28 @@ class App extends Component{
     this.winner()
   }
 
+  restartGame = () => {
+    this.setState({
+      squares: [" ", " ", " ", " ", " ", " ", " ", " ", " "],
+      currentPlayer: "X",
+      winner: null
+    })
+  }
+
   render(){
+    const tieGame = this.state.squares.every(value => value !== " ")
     return(
       <>
         <h1>Tic Tac Toe</h1>
         {this.state.winner && <h3>{this.state.winner} won the game</h3>}
+        {(tieGame && !this.state.winner) && <h3>Tie Game</h3>}
+        {(this.state.winner || tieGame) &&
+          <div className='button'>
+            <button onClick={this.restartGame}>
+              New Game
+            </button>
+          </div>
+        }
         <div className='gameBoard'>
         {this.state.squares.map((value, index) => {
           return(
